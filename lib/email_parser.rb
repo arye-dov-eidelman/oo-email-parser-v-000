@@ -29,6 +29,6 @@ class EmailParser
     @emails = @emails.split(/[,(, ) ]/).collect{ |i| i.strip}
   end
   def remove_duplicates
-    
+
   end
 end
