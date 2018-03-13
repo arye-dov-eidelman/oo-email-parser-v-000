@@ -14,6 +14,8 @@ class EmailParser
     else if
       parse_by_space
     else
+      parse_by_comma_and_space
+    end
     remove_duplicates
     @emails
   end
