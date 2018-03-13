@@ -26,6 +26,6 @@ class EmailParser
     @emails = @emails.split(',').collect{ |i| i.strip}
   end
   def parse_by_comma_and_space
-    @emails = @emails.split(/(,| )/).collect{|i| i != ' ' && i != ','}#.collect{ |i| i.strip}
+    @emails = @emails.split(/(,| )/).select{|i| i != ' ' && i != ','}#.collect{ |i| i.strip}
   end
 end
