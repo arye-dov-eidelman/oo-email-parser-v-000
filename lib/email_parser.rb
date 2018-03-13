@@ -9,17 +9,17 @@ class EmailParser
   end
 
   def parse
-    @emails.include?(',') ? @emails = parse_by_comma : @emails = parse_by_space
+    @emails.include?(',') ? parse_by_comma : parse_by_space
     remove_duplicates
     @emails
   end
   def parse_by_space
-    @emails.split(' ').collect{ |i| i.strip}
+    @emails = @emails.split(' ').collect{ |i| i.strip}
   end
   def parse_by_comma
-    @emails.split(',').collect{ |i| i.strip}
+    @emails = @emails.split(',').collect{ |i| i.strip}
   end
   def remove_duplicates
-    @emails.uniq
+    @emails = @emails.uniq
   end
 end
