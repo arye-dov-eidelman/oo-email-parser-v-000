@@ -9,9 +9,6 @@ class EmailParser
   end
 
   def parse
-    parse_by_comma_and_space.uniq
-  end
-  def parse_by_comma_and_space
-    @emails.split(/[ ,][ ,]*/)
+    @emails.split(/[ ,][ ,]*/).uniq
   end
 end
