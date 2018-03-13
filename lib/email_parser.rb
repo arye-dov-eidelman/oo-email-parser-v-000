@@ -11,13 +11,7 @@ class EmailParser
   def parse
     parse_by_comma_and_space.uniq
   end
-  def parse_by_space
-    @emails.split(' ').collect{ |i| i.strip}
-  end
-  def parse_by_comma
-    @emails.split(',').collect{ |i| i.strip}
-  end
   def parse_by_comma_and_space
-    @emails.split(/[ ,][ ,]*/)#.select{|i| i != ' ' && i != ',' && i != ''}.collect{ |i| i.strip}
+    @emails.split(/[ ,][ ,]*/)
   end
 end
