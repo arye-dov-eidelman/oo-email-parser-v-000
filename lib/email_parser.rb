@@ -8,25 +8,23 @@ class EmailParser
     @emails = emails
   end
 
-  # def parse
-  #   if @emails.include?(',')
-  #     parse_by_comma
-  #   else if
-  #     parse_by_space
-  #   else
-  #   remove_duplicates
-  #   @emails
-  # end
+  def parse
+    if @emails.include?(',')
+      parse_by_comma
+    else if
+      parse_by_space
+    else
+    remove_duplicates
+    @emails
+  end
   def parse_by_space
     @emails = @emails.split(' ').collect{ |i| i.strip}
   end
   def parse_by_comma
-    @emails = @emails.split(', ').collect{ |i| i.strip}
     @emails = @emails.split(',').collect{ |i| i.strip}
   end
-  def parse#_by_comma_and_space
-    parse_by_comma
-    parse_by_space
+  def parse_by_comma_and_space
+    @emails = @emails.split(/[,(, ) ]/).collect{ |i| i.strip}
   end
   def remove_duplicates
     @emails = @emails.uniq
