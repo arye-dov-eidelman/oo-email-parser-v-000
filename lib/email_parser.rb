@@ -12,11 +12,11 @@ class EmailParser
     # if !@emails.include?(',')
     #   parse_by_space
     # elsif !@emails.include?(' ')
-    #   
+    #
     # else
       parse_by_comma_and_space
     # end
-    remove_duplicates
+    @emails = @emails.uniq
     @emails
   end
   def parse_by_space
@@ -29,6 +29,6 @@ class EmailParser
     @emails = @emails.split(/[,(, ) ]/).collect{ |i| i.strip}
   end
   def remove_duplicates
-    @emails = @emails.uniq
+    
   end
 end
